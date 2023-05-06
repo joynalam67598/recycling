@@ -1,20 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { LoginPageForm } from './login.page.form';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule],
 })
 export class LoginPage implements OnInit {
-  constructor(private router: Router) {}
+  form: FormGroup;
 
-  ngOnInit() {}
+  constructor(private router: Router, private formbuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.form = new LoginPageForm(this.formbuilder).createForm();
+  }
 
   login() {
     this.router.navigate(['home']);
