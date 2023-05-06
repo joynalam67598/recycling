@@ -25,8 +25,14 @@
         <ion-button color="dark" fill="clear" size="full"
           >Forgot Email/Password</ion-button
         >
-        <ion-button color="success" size="full">Login</ion-button>
-        <ion-button color="success" fill="clear" size="full"
+        <ion-button (click)="login()" color="success" size="full"
+          >Login</ion-button
+        >
+        <ion-button
+          (click)="register()"
+          color="success"
+          fill="clear"
+          size="full"
           >Register</ion-button
         >
       </ion-card-content>
