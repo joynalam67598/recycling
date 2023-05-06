@@ -8,76 +8,24 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon
-          name="hourglass-outline"
-          slot="start"
-          color="warning"
-        ></ion-icon>
-        <ion-label>
-          On hold
-          <p>22/04/2023 16:04:15</p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <p>Created at 22/04/2023</p>
-          <p>
-            Notes: We have two bags that are full, one is plastic and the other
-            one is glass
-          </p>
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon
-          name="archive-outline"
-          slot="start"
-          color="secondery"
-        ></ion-icon>
-        <ion-label>
-          Processing
-          <p>22/04/2023 16:04:15</p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <p>Created at 22/04/2023</p>
-          <p>
-            Notes: We have two bags that are full, one is plastic and the other
-            one is glass
-          </p>
-        </ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon
-          name="checkmark-circle-outline"
-          slot="start"
-          color="success"
-        ></ion-icon>
-        <ion-label>
-          Finished
-          <p>23/04/2023 16:04:15</p>
-        </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label>
-          <p>Created at 22/04/2023</p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="trophy" slot="start" color="warning"></ion-icon>
-        <ion-label>$ 15.05</ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
+  <app-pickup-call-card
+    createdAt="22/04/2023 16:04:15"
+    updatedAt="22/04/2023 16:04:15"
+    status="On Hold"
+    notes="We have two bags that are full, one is plastic and the other
+            one is glass"
+  ></app-pickup-call-card>
+  <app-pickup-call-card
+    createdAt="22/04/2023 16:04:15"
+    updatedAt="22/04/2023 16:04:15"
+    status="Processing"
+    notes="We have two bags that are full"
+  ></app-pickup-call-card>
+  <app-pickup-call-card
+    createdAt="22/04/2023 16:04:15"
+    updatedAt="23/04/2023 16:04:15"
+    status="Finished"
+    notes="one is plastic and the other one is glass"
+    trophyAmmount="15.05"
+  ></app-pickup-call-card>
 </ion-content>

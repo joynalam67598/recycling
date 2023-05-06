@@ -8,13 +8,10 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './pickup-call.page.html',
   styleUrls: ['./pickup-call.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule],
 })
 export class PickupCallPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
