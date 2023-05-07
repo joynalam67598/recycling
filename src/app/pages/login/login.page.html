@@ -1,35 +1,73 @@
 <ion-content>
   <div class="flex-center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Recycling</ion-card-title>
-      </ion-card-header>
+    <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Recycling</ion-card-title>
+        </ion-card-header>
 
-      <ion-card-content>
-        <ion-item>
-          <ion-input
-            type="email"
-            label="Email"
-            labelPlacement="floating"
-            placeholder="email@domain.com"
-          ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input
-            label="Password"
-            type="password"
-            labelPlacement="floating"
-            placeholder="Enter password"
-          ></ion-input>
-        </ion-item>
-        <ion-button color="dark" fill="clear" size="full"
-          >Forgot Email/Password</ion-button
-        >
-        <ion-button color="success" size="full">Login</ion-button>
-        <ion-button color="success" fill="clear" size="full"
-          >Register</ion-button
-        >
-      </ion-card-content>
-    </ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-input
+              type="email"
+              label="Email"
+              formControlName="email"
+              labelPlacement="floating"
+              placeholder="email@domain.com"
+            ></ion-input>
+          </ion-item>
+          <app-error-message
+            [field]="$any(form.get('email'))"
+            error="required"
+            message="* Email is mandatory"
+          ></app-error-message>
+          <app-error-message
+            [field]="$any(form.get('email'))"
+            error="email"
+            message="* Email is invalid"
+          ></app-error-message>
+          <ion-item>
+            <ion-input
+              label="Password"
+              type="password"
+              formControlName="password"
+              labelPlacement="floating"
+              placeholder="Enter password"
+            ></ion-input>
+          </ion-item>
+          <app-error-message
+            [field]="$any(form.get('password'))"
+            error="password"
+            message="* Password is invalid"
+          ></app-error-message>
+          <app-error-message
+            [field]="$any(form.get('password'))"
+            error="required"
+            message="* Password is mandatory"
+          ></app-error-message>
+          <ion-button
+            color="dark"
+            fill="clear"
+            size="full"
+            [disabled]="!form.get('email')?.valid"
+            >Forgot Email/Password</ion-button
+          >
+          <ion-button
+            (click)="login()"
+            color="success"
+            size="full"
+            [disabled]="!form.valid"
+            >Login</ion-button
+          >
+          <ion-button
+            (click)="register()"
+            color="success"
+            fill="clear"
+            size="full"
+            >Register</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </form>
   </div>
 </ion-content>
