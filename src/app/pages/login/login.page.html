@@ -16,16 +16,16 @@
               placeholder="email@domain.com"
             ></ion-input>
           </ion-item>
-          <ion-label
-            color="danger"
-            *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']"
-            >* Email is mandatory</ion-label
-          >
-          <ion-label
-            color="danger"
-            *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']"
-            >* Email is invalid</ion-label
-          >
+          <app-error-message
+            [field]="$any(form.get('email'))"
+            error="required"
+            message="* Email is mandatory"
+          ></app-error-message>
+          <app-error-message
+            [field]="$any(form.get('email'))"
+            error="email"
+            message="* Email is invalid"
+          ></app-error-message>
           <ion-item>
             <ion-input
               label="Password"
@@ -35,11 +35,16 @@
               placeholder="Enter password"
             ></ion-input>
           </ion-item>
-          <ion-label
-            color="danger"
-            *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']"
-            >* Email is mandatory</ion-label
-          >
+          <app-error-message
+            [field]="$any(form.get('password'))"
+            error="password"
+            message="* Password is invalid"
+          ></app-error-message>
+          <app-error-message
+            [field]="$any(form.get('password'))"
+            error="required"
+            message="* Password is mandatory"
+          ></app-error-message>
           <ion-button
             color="dark"
             fill="clear"

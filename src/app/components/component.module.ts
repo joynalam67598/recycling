@@ -3,10 +3,11 @@ import { PickupCallCardComponent } from './pickup-call-card/pickup-call-card.com
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 @NgModule({
-  declarations: [PickupCallCardComponent],
-  exports: [PickupCallCardComponent],
+  declarations: [PickupCallCardComponent, ErrorMessageComponent],
+  exports: [PickupCallCardComponent, ErrorMessageComponent],
   imports: [IonicModule, FormsModule, CommonModule],
 })
 export class ComponentsModule {}

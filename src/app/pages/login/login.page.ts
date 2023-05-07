@@ -9,16 +9,23 @@ import {
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { LoginPageForm } from './login.page.form';
+import { ComponentsModule } from 'src/app/components/component.module';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ComponentsModule,
+  ],
 })
 export class LoginPage implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
 
   constructor(private router: Router, private formbuilder: FormBuilder) {}
 
